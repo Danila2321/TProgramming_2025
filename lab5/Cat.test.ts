@@ -1,0 +1,20 @@
+import { Cat } from '../lab5/Cat';
+import { test, expect } from 'vitest';
+
+test('getName() возвращает имя кошки', () => {
+    const cat = new Cat("Мурка", 3, "Сиамская");
+    const result = cat.getName();
+    expect(result).toBe("Мурка");
+});
+
+test('getAge() возвращает возраст кошки', () => {
+    const cat = new Cat("Мурка", 3, "Сиамская");
+    const result = cat.getAge();
+    expect(result).toBe(3);
+});
+
+test('Было 3 года, стало 10 (этот тест упадёт)', () => {
+    const cat = new Cat("Мурка", 3, "Сиамская");
+    cat.setAge(5);
+    expect(cat.getAge()).toBe(10); // ждали 10, а будет 5
+});
